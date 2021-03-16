@@ -1,12 +1,21 @@
 import React from 'react'
 
-function RepositoryItem(props) {
+interface RepositoryItemProps {
+  repository: {
+    name: string;
+    description: string;
+    html_url: string;
+  }
+}
 
-  const {name, description, html_url, id} = props.repository;
+
+function RepositoryItem(props: RepositoryItemProps) {
+
+  const {name, description, html_url} = props.repository;
 
    
   return (
-    <li key={id}>
+    <li>
         <strong>{name ? name : "default"}</strong>
         {description? <p>{description}</p> : <p>Repo sem descrição</p>}
         <a href={html_url}>

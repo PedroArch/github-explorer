@@ -3,9 +3,16 @@ import RepositoryItem from './RepositoryItem'
 
 import '../styles/RepositoryList.scss';
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+  id?: number;
+}
+
 function RepositoryList() {
 
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() =>{
       fetch("https://api.github.com/users/pedroarch/repos")
@@ -19,7 +26,7 @@ function RepositoryList() {
     <section className="repository-list">
       <h1>Lista de Repositórios</h1>
       <ul>
-        {repositories.map(repository => <RepositoryItem repository={repository} />)}
+        {repositories.map(repository => <RepositoryItem key={repository.id}repository={repository} />)}
       </ul> 
     </section>
   )
