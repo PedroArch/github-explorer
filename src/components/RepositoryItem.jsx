@@ -2,12 +2,11 @@ import React from 'react'
 
 function RepositoryItem(props) {
 
-  console.log(props)
+  const {name, description, html_url, id} = props.repository;
 
-  const {name, description, html_url} = props;
    
   return (
-    <li>
+    <li key={id}>
         <strong>{name ? name : "default"}</strong>
         {description? <p>{description}</p> : <p>Repo sem descrição</p>}
         <a href={html_url}>

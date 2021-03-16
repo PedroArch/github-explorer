@@ -7,11 +7,12 @@ function RepositoryList() {
 
   const [repositories, setRepositories] = useState([]);
 
-  useEffect( () =>{
-    fetch("https://api.github.com/users/pedroarch/repos")
+  useEffect(() =>{
+      fetch("https://api.github.com/users/pedroarch/repos")
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => setRepositories(data))
   }, [])
+
 
 
   return (
