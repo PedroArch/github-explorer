@@ -1,0 +1,43 @@
+body{
+  background-color: #07024ef8;
+}
+
+section.repository-list {
+  margin: 40px;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: rgb(245, 8, 174) ;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      & + li {
+        margin-top: 30px;
+      }
+
+      strong {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+      }
+
+      p {
+        display: block;
+        margin: 15px 0px;
+        color: rgb(255, 255, 255);
+      }
+
+      a {
+        text-decoration: none;
+        font-weight: 800;
+        color: #FFF;
+        background-color: rgb(231, 17, 185);
+        padding: 5px 15px;
+      }
+      
+    }
+  }
+
+}

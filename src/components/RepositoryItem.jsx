@@ -2,14 +2,15 @@ import React from 'react'
 
 function RepositoryItem(props) {
 
-  const {name, description, link} = props.repository
+  console.log(props)
+
+  const {name, description, html_url} = props;
    
   return (
     <li>
         <strong>{name ? name : "default"}</strong>
-        <p>{description}</p>
-
-        <a href={link}>
+        {description? <p>{description}</p> : <p>Repo sem descrição</p>}
+        <a href={html_url}>
           Acesse o repositório
         </a>
     </li>
